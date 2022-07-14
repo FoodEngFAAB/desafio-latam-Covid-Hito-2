@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío InstaFake</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: monospace
+        }
+    </style>
+</head>
+
+<body class="">
+
+    <!--navbar - Barra de navegación -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark top">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family:Lobster;font-size: 20pt;color:#FFFFFF" href="#">COVID-19</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ml-auto">
+                    <button id="home" type="button" class="btn btn-link"
+                        style="font-family:Lobster;color:#FFFFFF">Home</button>
+                    <button id="loginModal" type="button" class="btn btn-link" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"
+                        style="font-family:Lobster;color:#FFFFFF">Iniciar Sesión</button>
+
+                    <button id="situacionChile" type="button" class="btn btn-link d-none"
+                        style="font-family:Lobster;color:#FFFFFF">Situación USA</button>
+                    <button id="cerrarSesion" type="button" class="btn btn-link d-none"
+                        style="font-family:Lobster;color:#FFFFFF">Cierra Sesión</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal para ingreso de usuarios -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="jsForm">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="modal-footer">
+                            <button id="login" type="button" class="btn btn-secondary">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de gráfico y tabla -->
+    <div class="container d-block" id="worldSituation">
+        <div class="container" id="covidGraph">
+        </div>
+        <!-- grafico -->
+
+        <!-- tabla con los datos por pais-->
+        <section class="container" id="tablaPais">
+            <table class="table table-striped" id="tabla-covid"></table>
+            <!-- Modal -->
+            <div class="modal fade" style="height:600px" id="chartPais" data-backdrop="static" data-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered w-25" style="height:600px" role="document">
+                    <div class="modal-content" style="height:600px">
+                        <div class="modal-header" style="height:600px">
+                            <h5 class="modal-title">Situacion Pais</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="height:600px">
+                            <div class="modal-body" id="covidChartPais" style="justify-content:center">...</div>
+                        </div>
+                        <div class="modal-footer" style="height:600px">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+        </section>
+        <!-- tabla -->
+    </div>
+
+
+
+
+    <!------------------- JavaScript ---------------------->
+    <!-- BOOTSTRAP 5.0.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- CANVAS -->
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <!-- CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+
+    <!-- hoja de JavaScript -->
+    <script src="./assets/scripts.js"></script>
+
+
+</body>
+
+</html>
